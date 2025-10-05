@@ -5,21 +5,21 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.datasets import fetch_openml
 
-# 🎯 Step 1: Load MNIST digits
+
 mnist = fetch_openml('mnist_784', version=1, as_frame=False)
 X, y = mnist.data, mnist.target.astype(int)
 
-# 🧽 Step 2: Scale pixel values to 0–1
+
 scaler = MinMaxScaler()
 X = scaler.fit_transform(X)
 
-# 🧊 Step 3: Reshape into 28x28 images with 1 color channel (grayscale)
+
 X = X.reshape(-1, 28, 28, 1)
 
-# 🧪 Step 4: Split into training and test sets
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.02, random_state=42)
 
-# 💅 Step 5: Create the CNN model
+
 model = models.Sequential([
     layers.Conv2D(64, (3, 3), activation='relu', input_shape=(28, 28, 1)),
     layers.BatchNormalization(),
@@ -66,3 +66,4 @@ history = model.fit(
 )
 test_loss, test_acc = model.evaluate(X_test, y_test)
 print(f"\n FINAL ACCURACY: {round(test_acc * 100, 2)}% ")
+
