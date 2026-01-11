@@ -32,11 +32,6 @@ I played around with the architecture and number of epochs to improve accuracy a
 - that debugging ML models takes patience...
 - This model only works well on clean MNIST-style images.
 
-**Things I’d want to try next:**
-- data augmentation (rotation, noise, etc.)  
-- dropout or other regularization  
-- testing on more realistic handwriting datasets  
-
 **tools used:**
 - Python  
 - TensorFlow / Keras  
