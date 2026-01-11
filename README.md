@@ -1,37 +1,49 @@
-# MNIST-Digit-Recognizer#
-MNIST Digit Recognizer 
-A Convolutional Neural Network (CNN) built to classify handwritten digits (0–9) from the MNIST dataset.
 
-### Overview
-This project uses a deep learning model to achieve about **99% accuracy** on the MNIST dataset.
+**what this is:**
+This is a Convolutional Neural Network (CNN) I built using TensorFlow to recognize handwritten numbers from the MNIST dataset(digits 0–9).
+The model ended up getting around 99% accuracy, which was cool and honestly better than I expected when I first started.
 
-**Tools Used:** Python, TensorFlow/Keras, NumPy, Matplotlib
+**why I made it:**
+I wanted to actually understand how neural networks “see” images instead of just following tutorials. This project helped me learn how convolution layers pick up on patterns like edges and shapes, and how those features get turned into predictions.
 
----
+**data:**
+- MNIST dataset  
+- 60,000 training images  
+- 10,000 test images  
+- grayscale, 28×28 pixels
 
-### How It Works
-- Preprocessed 28x28 grayscale images
-- Built a CNN with convolution + pooling layers
-- Trained for multiple epochs using categorical crossentropy loss
-- Evaluated performance using accuracy and confusion matrix
+**how the model works:**
+The CNN includes:
+- convolution layers to extract features  
+- max pooling layers to reduce image size  
+- dense layers for classification  
+- a softmax output to predict which digit it is  
 
----
+I played around with the architecture and number of epochs to improve accuracy and avoid overfitting.
 
-###  Model Performance
-| Metric | Value |
-|--------|--------|
-| Accuracy | ~99% |
-| Loss | Very low (after ~5 epochs) |
+**results:**  
+- test accuracy: ~99%  
+- most errors happened with messy or ambiguous handwriting that i couldnt even tell what it was
+
+**what I learned:**
+- how CNNs actually process images  
+- why architecture choices matter  
+- how changing small things (like epochs or layer size) can affect results  
+- that debugging ML models takes patience...
+- This model only works well on clean MNIST-style images.
+
+**Things I’d want to try next:**
+- data augmentation (rotation, noise, etc.)  
+- dropout or other regularization  
+- testing on more realistic handwriting datasets  
+
+**tools used:**
+- Python  
+- TensorFlow / Keras  
+- NumPy  
+- Matplotlib  
 
 
----
+This was one of my first machine learning projects and helped set the foundation for applying deep learning to more meaningful, real-world problems later on.
+I’m interested in using machine learning for social impact, and this project was a starting point for building those skills.
 
-### Next Steps
-- Experiment with different optimizers and architectures  
-- Try on other datasets like CIFAR-10 or Fashion-MNIST  
-
----
-
-### About Me
-I’m a sophomore in high school interested in AI, machine learning, and how tech can make a difference in the world.  
-Follow my projects here or reach out if you want to collaborate!
